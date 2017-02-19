@@ -8,27 +8,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProgettoMonster
+namespace TestClassi
 {
     public partial class Form1 : Form
     {
+        private List<Monster> monsters;
+
         public Form1()
         {
             InitializeComponent();
+            monsters = Deserializer.deserializeMonsters();
+
+            foreach (Monster m in monsters)
+            {
+                Console.WriteLine(m.GetType());
+                if (m.GetType() == typeof(Fire_Monster))
+                {
+                    Fire_Monster f = m as Fire_Monster;
+                    Console.WriteLine(f.fireDamage);
+                }
+                //Console.WriteLine(m.fire);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Monster strongbonna = new Monster("Strongbonna", 100, 20);
-            Monster charmender = new Monster("Charmender", 60, 20, 10);
-
-            strongbonna.attack(charmender);
-            charmender.attack(strongbonna);
-            strongbonna.heal();
-            charmender.heal(strongbonna);
-            strongbonna.attack(charmender);
-            strongbonna.attack(charmender);
+            //Console.WriteLine(monsters[0].describe());
         }
 
+        private Monster addMonster(Monster m)
+        {
+            monsters.Add(m);
+            return m;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,27 +1,74 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ProgettoMonster
+namespace TestClassi
 {
     class Monster
     {
-        public string name;
-        public int maxHp;
-        public int curHp;
-        public int damage;
-        public int healFactor;
+        private string _name;
+        public string name { get { return _name; } }
+
+        private int _maxHp;
+        public int maxHp
+        { get { return _maxHp; } }
+
+        public bool alive { get { return curHp > 0; } }
+
+        private int _curHp;
+        public int curHp
+        {
+            set
+            {
+                if (value < 0) value = 0;
+                else if (value > _maxHp) value = _maxHp;
+                _curHp = value;
+            }
+
+            get { return _curHp; }
+        }
+
+        private int _damage;
+        public int damage { get { return _damage; } }
+
+        private int _healFactor;
+        public int healFactor
+        {
+            get
+            {
+                return _healFactor;
+            }
+            set
+            {
+                _healFactor = value;
+            }
+        }
+
+        public string status
+        {
+            get
+            {
+                return curHp + "/" + maxHp + " HP";
+            }
+        }
 
         public Monster(string name, int maxHp, int damage, int healFactor = 0)
         {
-            this.name = name;
-            this.maxHp = maxHp;
+            _name = name;
+
+            if (maxHp < 1) maxHp = 1;
+            _maxHp = maxHp;
+
             curHp = maxHp;
-            this.damage = damage;
+
+            if (damage < 0) damage = 0;
+            _damage = damage;
+
             this.healFactor = healFactor;
-            describe();  //funzione
+
+            describe();
         }
 
-        public string describe()  //inizializzo la funzione 
+        public string describe()
         {
             string output = "Questo è " + name + "\r\n";
             output += "HP: " + curHp + "\r\n";
@@ -30,12 +77,12 @@ namespace ProgettoMonster
             return output;
         }
 
-        public void describe(TextBox t)    //passo la textbox come argomento 
+        public void describe(TextBox t)
         {
             t.Text = describe();
         }
 
-        public void heal(Monster target)     //il target è colui che riceve la cura
+        public void heal(Monster target)
         {
             if (healFactor == 0)
             {
@@ -45,7 +92,7 @@ namespace ProgettoMonster
 
             if (curHp <= 0)
             {
-                Console.WriteLine("Non puoi curare nessuno da morto");   //sei morto e non puoi curare (hai la curHp minore di 0)
+                Console.WriteLine("Non puoi curare nessuno da morto");
                 return;
             }
 
@@ -63,7 +110,7 @@ namespace ProgettoMonster
             }
 
             Console.WriteLine(name + " usa cura su " + target.name);
-            Console.WriteLine(target.name + " è stato curato e ora ha " + target.curHp + "/" + target.maxHp + " HP");
+            Console.WriteLine(target.name + " è stato curato e ora ha " + target.status);
         }
 
         public void heal()
@@ -71,15 +118,15 @@ namespace ProgettoMonster
             heal(this);
         }
 
-        public void attack(Monster target)     //funzione attacco: il target è colui che viene attaccato 
+        public virtual void attack(Monster target)
         {
-            if (curHp <= 0)
+            if (!alive)
             {
                 Console.WriteLine("Non puoi attaccare nessuno da morto");
                 return;
             }
 
-            if (target.curHp <= 0)
+            if (!target.alive)
             {
                 Console.WriteLine(target.name + " è già esausto, non infierire.");
                 return;
@@ -89,7 +136,7 @@ namespace ProgettoMonster
             Console.WriteLine(name + " fa " + damage + " danni a " + target.name);
             target.curHp -= damage;
 
-            if (target.curHp <= 0)
+            if (!target.alive)
             {
                 target.curHp = 0;
                 Console.WriteLine(target.name + " è esausto.");
@@ -101,4 +148,5 @@ namespace ProgettoMonster
         }
     }
 }
+
 //febbraio
