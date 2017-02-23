@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestClassi
+namespace ProgettoMonster
 {
     class Fire_Monster : Monster
     {
@@ -28,3 +28,4 @@ namespace TestClassi
         }
     }
 }
+//in pari

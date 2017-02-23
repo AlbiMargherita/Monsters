@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace TestClassi
+namespace ProgettoMonster
 {
     class Monster
     {
@@ -149,4 +149,4 @@ namespace TestClassi
     }
 }
 
-//febbraio
+//in pari

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestClassi
+namespace ProgettoMonster
 {
     public partial class Form1 : Form
     {
@@ -19,16 +19,16 @@ namespace TestClassi
             InitializeComponent();
             monsters = Deserializer.deserializeMonsters();
 
-            foreach (Monster m in monsters)
-            {
-                Console.WriteLine(m.GetType());
-                if (m.GetType() == typeof(Fire_Monster))
-                {
-                    Fire_Monster f = m as Fire_Monster;
-                    Console.WriteLine(f.fireDamage);
-                }
-                //Console.WriteLine(m.fire);
-            }
+            /* foreach (Monster m in monsters)
+             {
+                 Console.WriteLine(m.GetType());
+
+                 if (m is Fire_Monster) //if (m.GetType() == typeof(Fire_Monster))
+                 {
+                     Fire_Monster f = m as Fire_Monster;
+                     Console.WriteLine(f.fireDamage);
+                 }
+             }*/
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,16 +40,6 @@ namespace TestClassi
         {
             monsters.Add(m);
             return m;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

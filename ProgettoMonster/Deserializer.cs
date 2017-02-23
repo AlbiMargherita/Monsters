@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace TestClassi
+namespace ProgettoMonster
 {
     static class Deserializer
     {
@@ -39,3 +39,4 @@ namespace TestClassi
         }
     }
 }
+//in pari
