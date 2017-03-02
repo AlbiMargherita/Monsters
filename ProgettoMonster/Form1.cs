@@ -41,5 +41,50 @@ namespace ProgettoMonster
             monsters.Add(m);
             return m;
         }
+
+        private int curMonsterIndex = 0;
+        private void prevButt_Click(object sender, EventArgs e)
+        {
+            if (curMonsterIndex == 0) return;
+            curMonsterIndex--;
+            renderMonster(monsters[curMonsterIndex]);
+        }
+
+        private void nextButt_Click(object sender, EventArgs e)
+        {
+            if (curMonsterIndex == monsters.Count - 1) return;
+            curMonsterIndex++;
+            renderMonster(monsters[curMonsterIndex]);
+        }
+
+        private void renderMonster(Monster m, bool isPlayer = true)
+        {
+            if (isPlayer)
+            {
+                pNameLbl.Text = m.name;
+                pHpLbl.Text = m.status;
+                pHpBar.Maximum = m.maxHp;
+                pHpBar.Value = m.curHp;
+                pPicture.Image = m.image;
+            }
+            else
+            {
+                eNameLbl.Text = m.name;
+                eHpLbl.Text = m.status;
+                eHpBar.Maximum = m.maxHp;
+                eHpBar.Value = m.curHp;
+                ePicture.Image = m.image;
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Monster m = monsters[curMonsterIndex];
+            m.curHp -= 20;
+            renderMonster(m);
+        }
+    }
+}
     }
 }

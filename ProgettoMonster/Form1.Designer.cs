@@ -28,103 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.playerPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pHpBar = new System.Windows.Forms.ProgressBar();
+            this.eHpBar = new System.Windows.Forms.ProgressBar();
+            this.pNameLbl = new System.Windows.Forms.Label();
+            this.pPicture = new System.Windows.Forms.PictureBox();
+            this.Epicture = new System.Windows.Forms.PictureBox();
+            this.playerPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Epicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // playerPanel
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 36);
-            this.textBox1.TabIndex = 1;
+            this.playerPanel.Controls.Add(this.pPicture);
+            this.playerPanel.Controls.Add(this.pNameLbl);
+            this.playerPanel.Controls.Add(this.pHpBar);
+            this.playerPanel.Location = new System.Drawing.Point(8, 8);
+            this.playerPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.playerPanel.Name = "playerPanel";
+            this.playerPanel.Size = new System.Drawing.Size(223, 237);
+            this.playerPanel.TabIndex = 5;
             // 
-            // textBox2
+            // panel1
             // 
-            this.textBox2.Location = new System.Drawing.Point(216, 12);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 97);
-            this.textBox2.TabIndex = 2;
+            this.panel1.Controls.Add(this.Epicture);
+            this.panel1.Controls.Add(this.eHpBar);
+            this.panel1.Location = new System.Drawing.Point(255, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(223, 237);
+            this.panel1.TabIndex = 13;
             // 
-            // textBox3
+            // pHpBar
             // 
-            this.textBox3.Location = new System.Drawing.Point(496, 145);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(133, 43);
-            this.textBox3.TabIndex = 3;
+            this.pHpBar.Location = new System.Drawing.Point(11, 57);
+            this.pHpBar.Margin = new System.Windows.Forms.Padding(2);
+            this.pHpBar.Name = "pHpBar";
+            this.pHpBar.Size = new System.Drawing.Size(202, 21);
+            this.pHpBar.TabIndex = 14;
+            this.pHpBar.Value = 100;
             // 
-            // comboBox1
+            // eHpBar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(216, 167);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 21);
-            this.comboBox1.TabIndex = 4;
+            this.eHpBar.Location = new System.Drawing.Point(11, 57);
+            this.eHpBar.Margin = new System.Windows.Forms.Padding(2);
+            this.eHpBar.Name = "eHpBar";
+            this.eHpBar.Size = new System.Drawing.Size(202, 21);
+            this.eHpBar.TabIndex = 0;
+            this.eHpBar.Value = 100;
             // 
-            // radioButton1
+            // pNameLbl
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(511, 272);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.pNameLbl.AutoSize = true;
+            this.pNameLbl.Location = new System.Drawing.Point(8, 7);
+            this.pNameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pNameLbl.Name = "pNameLbl";
+            this.pNameLbl.Size = new System.Drawing.Size(69, 13);
+            this.pNameLbl.TabIndex = 0;
+            this.pNameLbl.Text = "Nome mostro";
             // 
-            // comboBox2
+            // pPicture
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(216, 211);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(199, 21);
-            this.comboBox2.TabIndex = 6;
+            this.pPicture.Location = new System.Drawing.Point(11, 83);
+            this.pPicture.Margin = new System.Windows.Forms.Padding(2);
+            this.pPicture.Name = "pPicture";
+            this.pPicture.Size = new System.Drawing.Size(202, 148);
+            this.pPicture.TabIndex = 15;
+            this.pPicture.TabStop = false;
             // 
-            // listBox1
+            // Epicture
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(11, 145);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(145, 134);
-            this.listBox1.TabIndex = 7;
+            this.Epicture.Location = new System.Drawing.Point(11, 83);
+            this.Epicture.Margin = new System.Windows.Forms.Padding(2);
+            this.Epicture.Name = "Epicture";
+            this.Epicture.Size = new System.Drawing.Size(202, 148);
+            this.Epicture.TabIndex = 16;
+            this.Epicture.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 314);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.playerPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.playerPanel.ResumeLayout(false);
+            this.playerPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Epicture)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ListBox listBox1;
+
+        private System.Windows.Forms.Panel playerPanel;
+        private System.Windows.Forms.PictureBox pPicture;
+        private System.Windows.Forms.Label pNameLbl;
+        private System.Windows.Forms.ProgressBar pHpBar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox Epicture;
+        private System.Windows.Forms.ProgressBar eHpBar;
     }
 }
